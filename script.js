@@ -1,7 +1,7 @@
 const express = require("express");
 const bodyParser = require("body-parser");
 const https = require("https");
-
+const port = process.env.port || 3000;
 const app = express();
 app.use(bodyParser.urlencoded({ extended: true }));
 
@@ -65,6 +65,6 @@ app.post("/", function (req, res) {
   res.redirect("/weather");
 });
 
-app.listen(3000, function () {
+app.listen(port, function () {
   console.log("App is listening to port 3000");
 });
